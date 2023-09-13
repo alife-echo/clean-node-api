@@ -1,0 +1,5 @@
+em tsconfig.json:
+
+
+	esModuleInterop:true --> permite a adição de export e import em scripts que possui require
+	allowjs:true --> permite a adição de arquivos de configuração em format js em vez de json dentro do dist
