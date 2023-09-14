@@ -42,10 +42,18 @@ em .lintstagedrc.json
 {          
     "*.{ts}": [
         "eslint 'src/**' --fix",
+	"npm run test:staged",
         "git add"
       ]
 } --> vou verificar e corrigir a padronização de todos os arquivos ts, se der certo eu adiciono as alterações, se der errado, eu bloqueio o commit
 
+
+em packaged.json:
+
+ "scripts": {
+    "test": "jest",
+    "test:staged":"jest" --> rodar o jest quando houver um commit
+  },
 
 em jest.config.js:
 	  roots:['<rootDir>/src'], --> diretorio raiz de testes
