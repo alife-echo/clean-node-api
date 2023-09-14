@@ -16,6 +16,8 @@ npm i -D husky --> adicionar o husk , caso o codigo não esteja padronizado ele 
 
 npm i -D lint-staged -> permite rodar script somente nos arquivos que estao nas areas do stage, os arquivos git add entram na area do stage, ajuda o husky a trabalhar apenas nos arquivos modificados
 
+npm i -D jest @types/jest ts-jest --> instalação do jest
+
 em .eslintrc.json:
 	
 {
@@ -28,8 +30,25 @@ em .eslintrc.json:
 
 em .huskyrc.json 
 
-{
+"husky":{
     "hooks":{
         "pre-commit":"lint-staged" --> antes do commit, execute o lint-staged
     }
+}
+em .lintstagedrc.json
+{          
+    "*.{ts}": [
+        "eslint 'src/**' --fix",
+        "git add"
+      ]
+} --> vou verificar e corrigir a padronização de todos os arquivos ts, se der certo eu adiciono as alterações, se der errado, eu bloqueio o commit
+
+
+em jest.config.js:
+	  roots:['<rootDir>/src'], --> diretorio raiz de testes
+	collectCoverage:['<rootDir>/src/**/*.ts'], --> especifico os arquivos para cobertura de teste
+	coverageDirectory:'coverage', --> diretorio onde jest vai rodar os arquivos de cobertura
+	testEnvironment:'node',--> os testes vão rodar em cima do node
+	transform:{
+	'.+\\.ts$':'ts-jest' --> qualquer texto com .ts no final eu quero utilizar nele o ts-jest 
 }
