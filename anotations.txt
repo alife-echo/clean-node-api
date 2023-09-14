@@ -8,9 +8,13 @@ em tsconfig.json:
 
 
 
-npm i git-commit-msg-linter --> adicionar um linter para git
+npm i git-commit-msg-linter --> adicionar um linter para git, ajuda a padronizar nossos commits
 
-npm i eslint-config-standard-with-typescript --> adicionar o eslint 
+npm i eslint-config-standard-with-typescript --> adicionar o eslint , a padronizar nossos codigos
+
+npm i -D husky --> adicionar o husk , caso o codigo não esteja padronizado ele bloqueia o commit
+
+npm i -D lint-staged -> permite rodar script somente nos arquivos que estao nas areas do stage, os arquivos git add entram na area do stage, ajuda o husky a trabalhar apenas nos arquivos modificados
 
 em .eslintrc.json:
 	
@@ -18,5 +22,14 @@ em .eslintrc.json:
     "extends":"standard-with-typescript", --> apontar a depedencia que estamos usando
     "parserOptions": {
         "project":"./tsconfig.json" --> fazer com que o eslint trabalhe com o ts
+    }
+}
+
+
+em .huskyrc.json 
+
+{
+    "hooks":{
+        "pre-commit":"lint-staged" --> antes do commit, execute o lint-staged
     }
 }
