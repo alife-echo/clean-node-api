@@ -1,5 +1,22 @@
+# -- CONFIGURANDO DEPEDENCIAS
+
 em tsconfig.json:
 
 
 	esModuleInterop:true --> permite a adição de export e import em scripts que possui require
 	allowjs:true --> permite a adição de arquivos de configuração em format js em vez de json dentro do dist
+
+
+
+npm i git-commit-msg-linter --> adicionar um linter para git
+
+npm i eslint-config-standard-with-typescript --> adicionar o eslint 
+
+em .eslintrc.json:
+	
+{
+    "extends":"standard-with-typescript", --> apontar a depedencia que estamos usando
+    "parserOptions": {
+        "project":"./tsconfig.json" --> fazer com que o eslint trabalhe com o ts
+    }
+}
