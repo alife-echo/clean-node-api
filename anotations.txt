@@ -18,6 +18,9 @@ npm i -D lint-staged -> permite rodar script somente nos arquivos que estao nas 
 
 npm i -D jest @types/jest ts-jest --> instalação do jest
 
+npm install --save-dev ts-node --> sempre instalar o ts-node para rodar o jest corretamente
+
+
 em .eslintrc.json:
 	
 {
