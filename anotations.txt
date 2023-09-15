@@ -63,3 +63,28 @@ em jest.config.js:
 	transform:{
 	'.+\\.ts$':'ts-jest' --> qualquer texto com .ts no final eu quero utilizar nele o ts-jest 
 }
+
+
+
+
+
+# -- CLEAN ARCHITECTURE
+
+INVERSÃO DE DEPEDENCIA --> Fazer com que minhas blibliotecas dependam do meu controller/rota
+
+Adapter --> Adaptar o que o interface controller precisa para uma blibioteca/framework, sem aclopamento direto, assim como ele tambem que se conecta diretamente com a blibioteca/framework. uma ponte entre a interface controller e a biblioteca/framework
+
+Interface Controller -->  Interface criada por um controller para qualquer adapter se moldar nela
+
+Presentation --> Client
+
+Utils --> Camada generica, fazer coisas que podem ser utilizadas em qualquer lugar
+
+Domain -- > Onde fica as regras de negocios da aplicação. possuindo interfaces/protocolos
+
+Data --> onde fica as implementações da regra de negocio
+
+Infra -->  Implementações de interfaces voltadas para frameworks
+
+Main --> onde fazemos as composições dos objetos, instaciamos todos os layers
+
