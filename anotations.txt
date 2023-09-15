@@ -20,6 +20,18 @@ npm i -D jest @types/jest ts-jest --> instalação do jest
 
 npm install --save-dev ts-node --> sempre instalar o ts-node para rodar o jest corretamente
 
+npx jest --clearCache --> limpar cache do jest, caso ocorre errors não solucionados e sem logica
+
+
+npm install -g npm-check --> verificação de depedencias
+npm-check
+-s -> skipar as depedencias que o check identifica que não estou utilizando, mas , estou ou vou utilizar
+-u -> atualização interatica
+
+npm-check -s -u --> comando para atualizar depedencias
+
+
+
 
 em .eslintrc.json:
 	
